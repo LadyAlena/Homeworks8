@@ -1,11 +1,11 @@
-#include <iostream>
+п»ї#include <iostream>
 #include <string>
 #include "Figure.h"
 #include "figure_analysis.h"
 
 Figure::Figure(int side)
 {
-	name = "Фигура";
+	name = "Р¤РёРіСѓСЂР°";
 	this->side = side;
 
 	CheckCorrectFigure();
@@ -13,7 +13,7 @@ Figure::Figure(int side)
 
 Figure::Figure()
 {
-	name = "Фигура";
+	name = "Р¤РёРіСѓСЂР°";
 	side = 0;
 }
 
@@ -38,13 +38,13 @@ bool Figure::conditionFigure()
 
 void Figure::infoCreatingFigure()
 {
-	std::cout << GetName() << " (количество сторон " << GetCountSides() << ") создан" << std::endl;
+	std::cout << GetName() << " (РєРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚РѕСЂРѕРЅ " << GetCountSides() << ") СЃРѕР·РґР°РЅ" << std::endl;
 }
 
 void Figure::CheckCorrectFigure()
 {
 	if (!conditionFigure()) {
-		throw figure_analysis(name, side, "количество сторон не равно 0");
+		throw figure_analysis(name, side, "РєРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚РѕСЂРѕРЅ РЅРµ СЂР°РІРЅРѕ 0");
 	}
 	else {
 		infoCreatingFigure();

@@ -1,4 +1,4 @@
-#include <iostream>
+п»ї#include <iostream>
 #include "figure_analysis_triangle.h"
 
 figure_analysis_triangle::figure_analysis_triangle(std::string nameFigure, int a, int b, int c, int A, int B, int C, std::string msgError) : figure_analysis(nameFigure, 3, msgError) {
@@ -12,5 +12,5 @@ figure_analysis_triangle::figure_analysis_triangle(std::string nameFigure, int a
 
 void figure_analysis_triangle::infoErrorCreatingFigure()
 {
-	std::cout << nameFigure << " (стороны " << a << " " << b << " " << c << " " << "; углы " << A << " " << B << " " << C << ") не был создан. " << "Причина: " << what() << std::endl;
+	std::cout << nameFigure << " (СЃС‚РѕСЂРѕРЅС‹ " << a << " " << b << " " << c << " " << "; СѓРіР»С‹ " << A << " " << B << " " << C << ") РЅРµ Р±С‹Р» СЃРѕР·РґР°РЅ. " << "РџСЂРёС‡РёРЅР°: " << what() << std::endl;
 }
