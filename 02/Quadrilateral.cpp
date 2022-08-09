@@ -1,4 +1,4 @@
-#include <iostream>
+п»ї#include <iostream>
 #include "Quadrilateral.h"
 #include "figure_analysis_quadrilateral.h"
 
@@ -15,16 +15,16 @@ Quadrilateral::Quadrilateral(std::string name, int a, int b, int c, int d, int A
 	this->D = D;
 }
 
-Quadrilateral::Quadrilateral(int a, int b, int c, int d, int A, int B, int C, int D) : Quadrilateral("Четырехугольник", a, b, c, d, A, B, C, D) {
+Quadrilateral::Quadrilateral(int a, int b, int c, int d, int A, int B, int C, int D) : Quadrilateral("Р§РµС‚С‹СЂРµС…СѓРіРѕР»СЊРЅРёРє", a, b, c, d, A, B, C, D) {
 	CheckCorrectFigure();
 }
 
 void Quadrilateral::GetSides() {
-	std::cout << "Стороны: " << "a = " << a << " b = " << b << " c = " << c << " d = " << d;
+	std::cout << "РЎС‚РѕСЂРѕРЅС‹: " << "a = " << a << " b = " << b << " c = " << c << " d = " << d;
 }
 
 void Quadrilateral::GetAngles() {
-	std::cout << "Углы: " << "A = " << A << " B = " << B << " C = " << C << " D = " << D;
+	std::cout << "РЈРіР»С‹: " << "A = " << A << " B = " << B << " C = " << C << " D = " << D;
 }
 
 bool Quadrilateral::conditionFigure() {
@@ -37,12 +37,12 @@ void Quadrilateral::infoCreatingFigure() {
 	GetSides();
 	std::cout << "; ";
 	GetAngles();
-	std::cout << ") создан" << std::endl;
+	std::cout << ") СЃРѕР·РґР°РЅ" << std::endl;
 }
 
 void Quadrilateral::CheckCorrectFigure() {
 	if (!conditionFigure()) {
-		throw figure_analysis_quadrilateral(name, a, b, c, d, A, B, C, D, "сумма углов не равна 360");
+		throw figure_analysis_quadrilateral(name, a, b, c, d, A, B, C, D, "СЃСѓРјРјР° СѓРіР»РѕРІ РЅРµ СЂР°РІРЅР° 360");
 	}
 	else {
 		infoCreatingFigure();

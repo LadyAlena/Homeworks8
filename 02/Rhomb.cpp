@@ -1,7 +1,7 @@
-#include "Rhomb.h"
+п»ї#include "Rhomb.h"
 #include "figure_analysis_quadrilateral.h"
 
-Rhomb::Rhomb(int a, int b, int c, int d, int A, int B, int C, int D) : Quadrilateral("Ромб", a, b, c, d, A, B, C, D) {
+Rhomb::Rhomb(int a, int b, int c, int d, int A, int B, int C, int D) : Quadrilateral("Р РѕРјР±", a, b, c, d, A, B, C, D) {
 	CheckCorrectFigure();
 }
 
@@ -13,13 +13,13 @@ bool Rhomb::conditionFigure() {
 void Rhomb::CheckCorrectFigure() {
 
 	if (!(Quadrilateral::conditionFigure() || conditionFigure())) {
-		throw figure_analysis_quadrilateral(name, a, b, c, d, A, B, C, D, "сумма углов не равна 360, и/или стороны a, c, b, d не равны, и/или углы A,C и B,D попарно не равны");
+		throw figure_analysis_quadrilateral(name, a, b, c, d, A, B, C, D, "СЃСѓРјРјР° СѓРіР»РѕРІ РЅРµ СЂР°РІРЅР° 360, Рё/РёР»Рё СЃС‚РѕСЂРѕРЅС‹ a, c, b, d РЅРµ СЂР°РІРЅС‹, Рё/РёР»Рё СѓРіР»С‹ A,C Рё B,D РїРѕРїР°СЂРЅРѕ РЅРµ СЂР°РІРЅС‹");
 	}
 	else if (!Quadrilateral::conditionFigure()) {
-		throw figure_analysis_quadrilateral(name, a, b, c, d, A, B, C, D, "сумма углов не равна 360");
+		throw figure_analysis_quadrilateral(name, a, b, c, d, A, B, C, D, "СЃСѓРјРјР° СѓРіР»РѕРІ РЅРµ СЂР°РІРЅР° 360");
 	}
 	else if (!conditionFigure()) {
-		throw figure_analysis_quadrilateral(name, a, b, c, d, A, B, C, D, "и/или стороны a, c, b, d не равны, и/или углы A,C и B,D попарно не равны");
+		throw figure_analysis_quadrilateral(name, a, b, c, d, A, B, C, D, "Рё/РёР»Рё СЃС‚РѕСЂРѕРЅС‹ a, c, b, d РЅРµ СЂР°РІРЅС‹, Рё/РёР»Рё СѓРіР»С‹ A,C Рё B,D РїРѕРїР°СЂРЅРѕ РЅРµ СЂР°РІРЅС‹");
 	}
 	else {
 		infoCreatingFigure();

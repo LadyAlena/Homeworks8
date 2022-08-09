@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <string>
 #include "figure_analysis.h"
 #include "figure_analysis_triangle.h"

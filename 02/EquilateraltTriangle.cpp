@@ -1,7 +1,7 @@
-#include "EquilateraltTriangle.h"
+п»ї#include "EquilateraltTriangle.h"
 #include "figure_analysis_triangle.h"
 
-EquilateraltTriangle::EquilateraltTriangle(int a, int b, int c, int A, int B, int C) : Triangle("Равносторонний треугольник", a, b, c, A, B, C) {
+EquilateraltTriangle::EquilateraltTriangle(int a, int b, int c, int A, int B, int C) : Triangle("Р Р°РІРЅРѕСЃС‚РѕСЂРѕРЅРЅРёР№ С‚СЂРµСѓРіРѕР»СЊРЅРёРє", a, b, c, A, B, C) {
 	CheckCorrectFigure();
 }
 
@@ -13,13 +13,13 @@ bool EquilateraltTriangle::conditionFigure() {
 void EquilateraltTriangle::CheckCorrectFigure() {
 
 	if (!(Triangle::conditionFigure() || conditionFigure())) {
-		throw figure_analysis_triangle(name, a, b, c, A, B, C, "сумма углов не равна 180, и/или все стороны треугольника не равны, и/или все углы треугольника не равны 60");
+		throw figure_analysis_triangle(name, a, b, c, A, B, C, "СЃСѓРјРјР° СѓРіР»РѕРІ РЅРµ СЂР°РІРЅР° 180, Рё/РёР»Рё РІСЃРµ СЃС‚РѕСЂРѕРЅС‹ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР° РЅРµ СЂР°РІРЅС‹, Рё/РёР»Рё РІСЃРµ СѓРіР»С‹ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР° РЅРµ СЂР°РІРЅС‹ 60");
 	}
 	else if (!Triangle::conditionFigure()) {
-		throw figure_analysis_triangle(name, a, b, c, A, B, C, "сумма углов не равна 180");
+		throw figure_analysis_triangle(name, a, b, c, A, B, C, "СЃСѓРјРјР° СѓРіР»РѕРІ РЅРµ СЂР°РІРЅР° 180");
 	}
 	else if (!conditionFigure()) {
-		throw figure_analysis_triangle(name, a, b, c, A, B, C, "и/или все стороны треугольника не равны, и/или все углы треугольника не равны 60");
+		throw figure_analysis_triangle(name, a, b, c, A, B, C, "Рё/РёР»Рё РІСЃРµ СЃС‚РѕСЂРѕРЅС‹ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР° РЅРµ СЂР°РІРЅС‹, Рё/РёР»Рё РІСЃРµ СѓРіР»С‹ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР° РЅРµ СЂР°РІРЅС‹ 60");
 	}
 	else {
 		infoCreatingFigure();

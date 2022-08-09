@@ -1,4 +1,4 @@
-#include <iostream>
+п»ї#include <iostream>
 #include "Triangle.h"
 #include "figure_analysis_triangle.h"
 
@@ -13,17 +13,17 @@ Triangle::Triangle(std::string name, int a, int b, int c, int A, int B, int C) :
 	this->C = C;
 }
 
-Triangle::Triangle(int a, int b, int c, int A, int B, int C) : Triangle("Треугольник", a, b, c, A, B, C) {
+Triangle::Triangle(int a, int b, int c, int A, int B, int C) : Triangle("РўСЂРµСѓРіРѕР»СЊРЅРёРє", a, b, c, A, B, C) {
 	CheckCorrectFigure();
 }
 
 void Triangle::GetSides()
 {
-	std::cout << "стороны " << " " << a << " " << b << " " << c;
+	std::cout << "СЃС‚РѕСЂРѕРЅС‹ " << " " << a << " " << b << " " << c;
 }
 
 void Triangle::GetAngles() {
-	std::cout << "углы " << " " << A << " " << B << " " << C;
+	std::cout << "СѓРіР»С‹ " << " " << A << " " << B << " " << C;
 }
 
 bool Triangle::conditionFigure() {
@@ -36,12 +36,12 @@ void Triangle::infoCreatingFigure() {
 	GetSides();
 	std::cout << "; ";
 	GetAngles();
-	std::cout << ") создан" << std::endl;
+	std::cout << ") СЃРѕР·РґР°РЅ" << std::endl;
 }
 
 void Triangle::CheckCorrectFigure() {
 	if (!conditionFigure()) {
-		throw figure_analysis_triangle(name, a, b, c, A, B, C, "сумма углов не равна 180");
+		throw figure_analysis_triangle(name, a, b, c, A, B, C, "СЃСѓРјРјР° СѓРіР»РѕРІ РЅРµ СЂР°РІРЅР° 180");
 	}
 	else {
 		infoCreatingFigure();

@@ -1,7 +1,7 @@
-#include "Parallelogram.h"
+п»ї#include "Parallelogram.h"
 #include "figure_analysis_quadrilateral.h"
 
-Parallelogram::Parallelogram(int a, int b, int c, int d, int A, int B, int C, int D) : Quadrilateral("Параллелограмм", a, b, c, d, A, B, C, D) {
+Parallelogram::Parallelogram(int a, int b, int c, int d, int A, int B, int C, int D) : Quadrilateral("РџР°СЂР°Р»Р»РµР»РѕРіСЂР°РјРј", a, b, c, d, A, B, C, D) {
 	CheckCorrectFigure();
 }
 
@@ -13,13 +13,13 @@ bool Parallelogram::conditionFigure() {
 void Parallelogram::CheckCorrectFigure() {
 
 	if (!(Quadrilateral::conditionFigure() || conditionFigure())) {
-		throw figure_analysis_quadrilateral(name, a, b, c, d, A, B, C, D, "сумма углов не равна 360, и/или стороны a,c и b,d попарно не равны, и/или углы A,C и B,D попарно не равны");
+		throw figure_analysis_quadrilateral(name, a, b, c, d, A, B, C, D, "СЃСѓРјРјР° СѓРіР»РѕРІ РЅРµ СЂР°РІРЅР° 360, Рё/РёР»Рё СЃС‚РѕСЂРѕРЅС‹ a,c Рё b,d РїРѕРїР°СЂРЅРѕ РЅРµ СЂР°РІРЅС‹, Рё/РёР»Рё СѓРіР»С‹ A,C Рё B,D РїРѕРїР°СЂРЅРѕ РЅРµ СЂР°РІРЅС‹");
 	}
 	else if (!Quadrilateral::conditionFigure()) {
-		throw figure_analysis_quadrilateral(name, a, b, c, d, A, B, C, D, "сумма углов не равна 360");
+		throw figure_analysis_quadrilateral(name, a, b, c, d, A, B, C, D, "СЃСѓРјРјР° СѓРіР»РѕРІ РЅРµ СЂР°РІРЅР° 360");
 	}
 	else if (!conditionFigure()) {
-		throw figure_analysis_quadrilateral(name, a, b, c, d, A, B, C, D, "и/или стороны a,c и b,d попарно не равны, и/или углы A,C и B,D попарно не равны");
+		throw figure_analysis_quadrilateral(name, a, b, c, d, A, B, C, D, "Рё/РёР»Рё СЃС‚РѕСЂРѕРЅС‹ a,c Рё b,d РїРѕРїР°СЂРЅРѕ РЅРµ СЂР°РІРЅС‹, Рё/РёР»Рё СѓРіР»С‹ A,C Рё B,D РїРѕРїР°СЂРЅРѕ РЅРµ СЂР°РІРЅС‹");
 	}
 	else {
 		infoCreatingFigure();

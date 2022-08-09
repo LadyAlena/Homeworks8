@@ -1,7 +1,7 @@
-#include "IsoscelesTriangle.h"
+п»ї#include "IsoscelesTriangle.h"
 #include "figure_analysis_triangle.h"
 
-IsoscelesTriangle::IsoscelesTriangle(int a, int b, int c, int A, int B, int C) : Triangle("Равнобедренный треугольник", a, b, c, A, B, C) {
+IsoscelesTriangle::IsoscelesTriangle(int a, int b, int c, int A, int B, int C) : Triangle("Р Р°РІРЅРѕР±РµРґСЂРµРЅРЅС‹Р№ С‚СЂРµСѓРіРѕР»СЊРЅРёРє", a, b, c, A, B, C) {
 	CheckCorrectFigure();
 }
 
@@ -13,13 +13,13 @@ bool IsoscelesTriangle::conditionFigure() {
 void IsoscelesTriangle::CheckCorrectFigure() {
 
 	if (!(Triangle::conditionFigure() || conditionFigure())) {
-		throw figure_analysis_triangle(name, a, b, c, A, B, C, "сумма углов не равна 180, и/или стороны а и с не равны, и/или углы А и С не равны");
+		throw figure_analysis_triangle(name, a, b, c, A, B, C, "СЃСѓРјРјР° СѓРіР»РѕРІ РЅРµ СЂР°РІРЅР° 180, Рё/РёР»Рё СЃС‚РѕСЂРѕРЅС‹ Р° Рё СЃ РЅРµ СЂР°РІРЅС‹, Рё/РёР»Рё СѓРіР»С‹ Рђ Рё РЎ РЅРµ СЂР°РІРЅС‹");
 	}
 	else if (!Triangle::conditionFigure()) {
-		throw figure_analysis_triangle(name, a, b, c, A, B, C, "сумма углов не равна 180");
+		throw figure_analysis_triangle(name, a, b, c, A, B, C, "СЃСѓРјРјР° СѓРіР»РѕРІ РЅРµ СЂР°РІРЅР° 180");
 	}
 	else if (!conditionFigure()) {
-		throw figure_analysis_triangle(name, a, b, c, A, B, C, "и/или стороны а и с не равны, и/или углы А и С не равны");
+		throw figure_analysis_triangle(name, a, b, c, A, B, C, "Рё/РёР»Рё СЃС‚РѕСЂРѕРЅС‹ Р° Рё СЃ РЅРµ СЂР°РІРЅС‹, Рё/РёР»Рё СѓРіР»С‹ Рђ Рё РЎ РЅРµ СЂР°РІРЅС‹");
 	}
 	else {
 		infoCreatingFigure();
