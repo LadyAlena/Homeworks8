@@ -1,15 +1,15 @@
-#include <iostream> 
+п»ї#include <iostream> 
 #include <stdexcept>
 #include <string>
 
 class bad_lenght : std::exception {
 	public:
-		const char* what() const override { return "Вы ввели слово запретной длины! До свидания"; }
+		const char* what() const override { return "Р’С‹ РІРІРµР»Рё СЃР»РѕРІРѕ Р·Р°РїСЂРµС‚РЅРѕР№ РґР»РёРЅС‹! Р”Рѕ СЃРІРёРґР°РЅРёСЏ"; }
 };
 
 class incorrect_length : std::exception {
 public:
-	const char* what() const override { return "Длина строки не может быть меньше или равна нулю! Повторите ввод"; }
+	const char* what() const override { return "Р”Р»РёРЅР° СЃС‚СЂРѕРєРё РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РјРµРЅСЊС€Рµ РёР»Рё СЂР°РІРЅР° РЅСѓР»СЋ! РџРѕРІС‚РѕСЂРёС‚Рµ РІРІРѕРґ"; }
 };
 
 int function(std::string str, int forbidden_length) {
@@ -36,7 +36,7 @@ int main(int argc, char** argv) {
 	bool swh = true;
 
 	do {
-		std::cout << "Введите запретную длину: ";
+		std::cout << "Р’РІРµРґРёС‚Рµ Р·Р°РїСЂРµС‚РЅСѓСЋ РґР»РёРЅСѓ: ";
 		std::getline(std::cin, ForbiddenLengthInput);
 
 		try {
@@ -44,7 +44,7 @@ int main(int argc, char** argv) {
 			forbidden_length = std::stoi(ForbiddenLengthInput, &pos);
 
 			if (ForbiddenLengthInput.size() != pos) {
-				throw std::invalid_argument("Можно вводить только число! Повторите ввод");
+				throw std::invalid_argument("РњРѕР¶РЅРѕ РІРІРѕРґРёС‚СЊ С‚РѕР»СЊРєРѕ С‡РёСЃР»Рѕ! РџРѕРІС‚РѕСЂРёС‚Рµ РІРІРѕРґ");
 			}
 
 			if (forbidden_length <= 0) {
@@ -54,11 +54,11 @@ int main(int argc, char** argv) {
 			swh = false;
 		}
 		catch (std::invalid_argument) {
-			std::cout << "Можно вводить только число! Повторите ввод" << std::endl;
+			std::cout << "РњРѕР¶РЅРѕ РІРІРѕРґРёС‚СЊ С‚РѕР»СЊРєРѕ С‡РёСЃР»Рѕ! РџРѕРІС‚РѕСЂРёС‚Рµ РІРІРѕРґ" << std::endl;
 			continue;
 		}
 		catch (std::out_of_range) {
-			std::cout << "Число слишком большое! Повторите ввод" << std::endl;
+			std::cout << "Р§РёСЃР»Рѕ СЃР»РёС€РєРѕРј Р±РѕР»СЊС€РѕРµ! РџРѕРІС‚РѕСЂРёС‚Рµ РІРІРѕРґ" << std::endl;
 			continue;
 		}
 		catch (incorrect_length& ex) {
@@ -66,11 +66,11 @@ int main(int argc, char** argv) {
 			continue;
 		}
 		catch (std::exception& ex) {
-			std::cout << "Произошла ошибка: " << ex.what() << " Повторите ввод" << std::endl;
+			std::cout << "РџСЂРѕРёР·РѕС€Р»Р° РѕС€РёР±РєР°: " << ex.what() << " РџРѕРІС‚РѕСЂРёС‚Рµ РІРІРѕРґ" << std::endl;
 			continue;
 		}
 		catch (...) {
-			std::cout << "Произошла ошибка! Повторите ввод" << std::endl;
+			std::cout << "РџСЂРѕРёР·РѕС€Р»Р° РѕС€РёР±РєР°! РџРѕРІС‚РѕСЂРёС‚Рµ РІРІРѕРґ" << std::endl;
 			continue;
 		}
 
@@ -79,12 +79,12 @@ int main(int argc, char** argv) {
 	do {
 		swh = true;
 
-		std::cout << "Введите слово: ";
+		std::cout << "Р’РІРµРґРёС‚Рµ СЃР»РѕРІРѕ: ";
 		std::getline(std::cin, str);
 	
 		try {
 
-			std::cout << "Длина слова " << "\"" << str << "\"" << " равна " << function(str, forbidden_length) << std::endl;
+			std::cout << "Р”Р»РёРЅР° СЃР»РѕРІР° " << "\"" << str << "\"" << " СЂР°РІРЅР° " << function(str, forbidden_length) << std::endl;
 
 		}
 		catch (bad_lenght& ex) {
@@ -94,11 +94,11 @@ int main(int argc, char** argv) {
 			swh = false;
 		}
 		catch (std::exception& ex) {
-			std::cout << "Произошла ошибка: " << ex.what() << " Повторите ввод" << std::endl;
+			std::cout << "РџСЂРѕРёР·РѕС€Р»Р° РѕС€РёР±РєР°: " << ex.what() << " РџРѕРІС‚РѕСЂРёС‚Рµ РІРІРѕРґ" << std::endl;
 			continue;
 		}
 		catch (...) {
-			std::cout << "Произошла ошибка! Повторите ввод" << std::endl;
+			std::cout << "РџСЂРѕРёР·РѕС€Р»Р° РѕС€РёР±РєР°! РџРѕРІС‚РѕСЂРёС‚Рµ РІРІРѕРґ" << std::endl;
 			continue;
 		}
 
