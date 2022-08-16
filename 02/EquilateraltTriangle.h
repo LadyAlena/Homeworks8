@@ -7,9 +7,7 @@ public:
 	EquilateraltTriangle(int a, int b, int c, int A, int B, int C);
 
 protected:
-
 	bool conditionFigure() override;
-
 	void CheckCorrectFigure() override;
 };
 

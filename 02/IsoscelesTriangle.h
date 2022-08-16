@@ -8,7 +8,6 @@ public:
 
 protected:
 	bool conditionFigure() override;
-
 	void CheckCorrectFigure() override;
 };
 

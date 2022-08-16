@@ -1,5 +1,4 @@
 ﻿#include <iostream>
-#include <string>
 #include "Figure.h"
 #include "figure_analysis.h"
 
